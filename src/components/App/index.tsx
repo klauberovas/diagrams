@@ -1,73 +1,61 @@
 import './styles.css';
+import { useState, useEffect } from 'react';
+import { BoxView } from '../BoxView';
+import { ConnectionsView } from '../ConnectionsView';
+import { BackendData, Box, Connection, ResultItem } from '../../data/data';
 
 export const App = (): JSX.Element => {
+  const [diagrams, setDiagrams] = useState<ResultItem | null>(null);
+  const [boxes, setBoxes] = useState<Box[]>([]);
+  const [connections, setConnections] = useState<Connection[]>([]);
+
+  useEffect(() => {
+    const fetchData = async (): Promise<void> => {
+      const response = await fetch('http://localhost:4000/api/diagrams');
+      const data = (await response.json()) as BackendData;
+
+      setDiagrams(data.result[0]);
+      setBoxes(data.result[0].boxes);
+      setConnections(data.result[0].connections);
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="layout">
       <header className="header">
-        <h1>Název diagramu</h1>
+        <h1>{diagrams !== null ? diagrams.title : null}</h1>
         <div className="label-field">
           <label htmlFor="box-label">Label:</label>
           <input type="text" id="box-label" disabled />
         </div>
       </header>
       <svg className="board">
-        <line
-          x1="100"
-          y1="75"
-          x2="250"
-          y2="75"
-          stroke="white"
-          strokeWidth="2"
-        />
-        <line
-          x1="100"
-          y1="75"
-          x2="100"
-          y2="175"
-          stroke="white"
-          strokeWidth="2"
-        />
-        <g>
-          <rect>
-            x="50" y="50" rx="5" ry="5" width="100" height="50" fill="orange"
-            stroke="white" strokeWidth="2"
-          </rect>
-          <text
-            className="label"
-            x="100"
-            y="75"
-            text-anchor="middle"
-            alignment-baseline="central"
-          >
-            Box 1
-          </text>
-        </g>
-        <g>
-          <rect>
-            x="200" y="50" rx="5" ry="5" width="100" height="50" fill="orange"
-            stroke="white" strokeWidth="2"
-          </rect>
-        </g>
-        <text>
-          className="label" x="250" y="75" text-anchor="middle"
-          alignment-baseline="central" Box 2
-        </text>
-
-        <g>
-          <rect>
-            x="50" y="150" rx="5" ry="5" width="100" height="50" fill="orange"
-            stroke="white" strokeWidth="2"
-          </rect>
-        </g>
-        <text
-          className="label"
-          x="100"
-          y="175"
-          text-anchor="middle"
-          alignment-baseline="central"
-        >
-          Box 3
-        </text>
+        {connections.map((line, index) => {
+          let from = boxes[line.from];
+          let to = boxes[line.to];
+          return (
+            <ConnectionsView
+              key={index}
+              posX1={from.posX + from.width / 2}
+              posY1={from.posY + from.height / 2}
+              posX2={to.posX + to.width / 2}
+              posY2={to.posY + to.height / 2}
+            />
+          );
+        })}
+        {boxes.map((box) => (
+          <BoxView
+            key={box.label}
+            label={box.label}
+            width={box.width}
+            fill={box.fill}
+            height={box.height}
+            posX={box.posX}
+            posY={box.posY}
+          />
+        ))}
       </svg>
     </div>
   );

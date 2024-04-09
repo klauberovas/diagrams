@@ -1,22 +1,41 @@
 interface Props {
-  number: number;
+  label: string;
+  width: number;
+  fill: string;
+  height: number;
+  posX: number;
+  posY: number;
 }
 
-export const BoxView = ({ number }: Props): JSX.Element => {
+export const BoxView = ({
+  width,
+  label,
+  fill,
+  height,
+  posX,
+  posY,
+}: Props): JSX.Element => {
   return (
     <g>
-      <rect>
-        x="50" y="50" rx="5" ry="5" width="100" height="50" fill="orange"
-        stroke="white" strokeWidth="2"
-      </rect>
+      <rect
+        x={posX}
+        y={posY}
+        rx="5"
+        ry="5"
+        width={width}
+        height={height}
+        fill={fill}
+        stroke="white"
+        strokeWidth="2"
+      ></rect>
       <text
         className="label"
-        x="100"
-        y="75"
+        x={posX + width / 2}
+        y={posY + height / 2}
         text-anchor="middle"
         alignment-baseline="central"
       >
-        Box {number}
+        {label}
       </text>
     </g>
   );

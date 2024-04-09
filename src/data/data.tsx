@@ -1,4 +1,4 @@
-export interface Item {
+export interface ResultItem {
   id: number;
   title: string;
   boxes: Box[];
@@ -21,5 +21,5 @@ export interface Connection {
 
 export interface BackendData {
   status: string;
-  result: Item[];
+  result: ResultItem[];
 }
