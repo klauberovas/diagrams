@@ -1,0 +1,225 @@
+[
+  {
+    "id": 0,
+    "title": "Druhy potravin",
+    "boxes": [
+      {
+        "posX": 400,
+        "posY": 20,
+        "width": 160,
+        "height": 40,
+        "fill": "lightgray",
+        "label": "Potraviny"
+      },
+      {
+        "posX": 220,
+        "posY": 100,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Zelenina"
+      },
+      {
+        "posX": 500,
+        "posY": 100,
+        "width": 100,
+        "height": 40,
+        "fill": "#ffa500",
+        "label": "Ovoce"
+      },
+      {
+        "posX": 670,
+        "posY": 100,
+        "width": 100,
+        "height": 40,
+        "fill": "#fcE6c9",
+        "label": "Protein"
+      },
+      {
+        "posX": 20,
+        "posY": 160,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Plodová"
+      },
+      {
+        "posX": 140,
+        "posY": 160,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Listová"
+      },
+      {
+        "posX": 260,
+        "posY": 160,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Obiloviny"
+      },
+      {
+        "posX": 380,
+        "posY": 160,
+        "width": 100,
+        "height": 40,
+        "fill": "#ffa500",
+        "label": "Bobule"
+      },
+      {
+        "posX": 500,
+        "posY": 160,
+        "width": 100,
+        "height": 40,
+        "fill": "#ffa500",
+        "label": "Peckové"
+      },
+      {
+        "posX": 620,
+        "posY": 160,
+        "width": 100,
+        "height": 40,
+        "fill": "#fcE6c9",
+        "label": "Maso"
+      },
+      {
+        "posX": 740,
+        "posY": 160,
+        "width": 100,
+        "height": 40,
+        "fill": "#fcE6c9",
+        "label": "Luštěniny"
+      },
+      {
+        "posX": 140,
+        "posY": 220,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Lepkové"
+      },
+      {
+        "posX": 260,
+        "posY": 220,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Bezlepkové"
+      },
+      {
+        "posX": 380,
+        "posY": 220,
+        "width": 100,
+        "height": 40,
+        "fill": "#ffa500",
+        "label": "Jablka"
+      },
+      {
+        "posX": 620,
+        "posY": 220,
+        "width": 100,
+        "height": 40,
+        "fill": "#ffa500",
+        "label": "Hrušky"
+      },
+      {
+        "posX": 740,
+        "posY": 220,
+        "width": 100,
+        "height": 40,
+        "fill": "#fcE6c9",
+        "label": "Čočka"
+      },
+      {
+        "posX": 20,
+        "posY": 280,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Papriky"
+      },
+      {
+        "posX": 200,
+        "posY": 280,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Pohanka"
+      },
+      {
+        "posX": 320,
+        "posY": 280,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Rýže"
+      },
+      {
+        "posX": 440,
+        "posY": 280,
+        "width": 100,
+        "height": 40,
+        "fill": "#ffa500",
+        "label": "Meruňky"
+      },
+      {
+        "posX": 560,
+        "posY": 280,
+        "width": 100,
+        "height": 40,
+        "fill": "#ffa500",
+        "label": "Broskve"
+      },
+      {
+        "posX": 140,
+        "posY": 340,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Rajčata"
+      },
+      {
+        "posX": 260,
+        "posY": 340,
+        "width": 100,
+        "height": 40,
+        "fill": "#137752",
+        "label": "Quinoa"
+      },
+      {
+        "posX": 500,
+        "posY": 340,
+        "width": 100,
+        "height": 40,
+        "fill": "#ffa500",
+        "label": "Švestky"
+      }
+    ],
+    "connections": [
+      { "from": 0, "to": 1 },
+      { "from": 0, "to": 2 },
+      { "from": 0, "to": 3 },
+      { "from": 1, "to": 4 },
+      { "from": 1, "to": 5 },
+      { "from": 1, "to": 6 },
+      { "from": 2, "to": 7 },
+      { "from": 2, "to": 8 },
+      { "from": 4, "to": 16 },
+      { "from": 4, "to": 21 },
+      { "from": 3, "to": 9 },
+      { "from": 3, "to": 10 },
+      { "from": 6, "to": 11 },
+      { "from": 6, "to": 12 },
+      { "from": 8, "to": 13 },
+      { "from": 8, "to": 14 },
+      { "from": 8, "to": 19 },
+      { "from": 8, "to": 20 },
+      { "from": 8, "to": 23 },
+      { "from": 10, "to": 15 },
+      { "from": 12, "to": 17 },
+      { "from": 12, "to": 18 },
+      { "from": 12, "to": 22 }
+    ]
+  }
+]
