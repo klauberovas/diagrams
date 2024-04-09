@@ -13,3 +13,12 @@ Než se pustíme do možnosti diagramy vytvářet, musíme nejdříve umět diag
 4. Nezapomeňte také v hlavičce stránky zobrazit název diagramu.
 
 Nyní byste měli mít hotovou aplikaci, která umí zobrazit libovolný diagram z API serveru.
+
+### Vytváření diagramů
+
+Vytváření diagramů uživateleme je složitější než zobrazení, neboť uživatel může interagovat s diagramem a měnit jeho obsah. Vytvoření diagramu funguje takto
+
+- Uživatel může přidat nový box do digramu tak, že provede Ctrl+Click na prázdné místo a nový box se objeví s nějakým výchozím textem, například "Nová položka".
+- Každý box lze vybrat kliknutím myší a editovat jeho text.
+- Boxy lze propojit spojnicemi, které se zobrazí mezi středy boxů. Když uživatel vybere box, může pomocí Ctrl+Click na jiný box vytvořit mezi těmito boxy spojnici.
+  Ukázku vytváření diagramu můžete vidět [tomto videu](https://kodim.cz/cms/assets/kurzy/zaklady-ts/lekce/react/projekt/vytvareni/tvorba-diagramu.mp4)
