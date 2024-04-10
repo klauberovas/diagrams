@@ -22,6 +22,22 @@ export const App = (): JSX.Element => {
     fetchData();
   }, []);
 
+  const handleChange = (event: React.MouseEvent<SVGSVGElement>): void => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = event.clientX - rect.x;
+    const y = event.clientY - rect.y;
+
+    const newBox: Box = {
+      posX: x,
+      posY: y,
+      width: 160,
+      height: 40,
+      fill: 'white',
+      label: 'Nová položka',
+    };
+    setBoxes([...boxes, newBox]);
+  };
+
   return (
     <div className="layout">
       <header className="header">
@@ -31,7 +47,7 @@ export const App = (): JSX.Element => {
           <input type="text" id="box-label" disabled />
         </div>
       </header>
-      <svg className="board">
+      <svg className="board" onClick={handleChange}>
         {connections.map((line, index) => {
           let from = boxes[line.from];
           let to = boxes[line.to];
