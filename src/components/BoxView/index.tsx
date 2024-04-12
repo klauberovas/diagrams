@@ -16,7 +16,7 @@ export const BoxView = ({
   posY,
 }: Props): JSX.Element => {
   return (
-    <g>
+    <>
       <rect
         x={posX}
         y={posY}
@@ -32,11 +32,11 @@ export const BoxView = ({
         className="label"
         x={posX + width / 2}
         y={posY + height / 2}
-        text-anchor="middle"
-        alignment-baseline="central"
+        alignmentBaseline="central"
+        textAnchor="middle"
       >
         {label}
       </text>
-    </g>
+    </>
   );
 };

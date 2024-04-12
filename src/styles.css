@@ -23,6 +23,7 @@ input[type="text"] {
   color: white;
   background-color: #454545;
 
+
   &:focus {
     outline: none;
   }
@@ -47,6 +48,7 @@ input[type="text"] {
 
 .board {
   background-image: url('../public/gridcell.png');
+
 }
 
 .label-field {
